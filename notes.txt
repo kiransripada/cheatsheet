@@ -1,0 +1,6 @@
+
+Get  root cert from. http://root.ksripada.com/myroot.pem
+
+openssl x509 -in myroot.pem -inform pem -out myroot.der -outform der
+
+keytool -importcert -alias myroot -keystore \ $JAVA_HOME/lib/security/cacerts -storepass changeit -file myroot.der
